@@ -11,5 +11,6 @@
 
 
 ## 2.数据结构与算法学习
-<a href="Record-of-Little-Snail/DataStructure/src/main/resources/TimeAndSpace_Complexity.markdown">时间，空间复杂度</a>
-<a href="Record-of-Little-Snail/DataStructure/src/main/resources/ArrayBase.markdown">数组学习</a>
+<a href="DataStructure/src/main/resources/TimeAndSpace_Complexity.markdown">时间，空间复杂度</a>
+<p>
+<a href="DataStructure/src/main/resources/ArrayBase.markdown">数组学习</a>
