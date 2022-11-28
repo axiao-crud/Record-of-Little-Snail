@@ -89,6 +89,32 @@ public class Array {
         return left;
     }
 
+    //有序数组的平方 时间复杂度O（n+nlogn）
+    public static int[] arraySquare(int nums[]){
+        for (int i=0;i<nums.length;i++){
+            nums[i]=nums[i]*nums[i];
+        }
+        Arrays.sort(nums);
+        return nums;
+    }
+
+    //有序数组的平方 时间复杂度O(n) 双指针法
+    public static int[] arraySquare2(int nums[]){
+        int result[] = new int[nums.length];
+        int left = 0;
+        int right = nums.length-1;
+        for (int index = nums.length-1;left<=right;index--){
+            if (nums[left]*nums[left]>nums[right]*nums[right]){
+                result[index]=nums[left]*nums[left];
+                left++;
+            }else{
+                result[index]=nums[right]*nums[right];
+                right--;
+            }
+        }
+        return result;
+    }
+
     
 
 }
