@@ -14,12 +14,12 @@ import java.util.stream.Stream;
 public class Stream_Learn {
 
     /**
-     *   将list集合中姓张的元素过滤到一个新的集合中
-     *
-     *   然后将过滤出来的姓张的元素中，再过滤出来长度为3的元素，存储到一个新的集合中
+     * 将list集合中姓张的元素过滤到一个新的集合中
+     * <p>
+     * 然后将过滤出来的姓张的元素中，再过滤出来长度为3的元素，存储到一个新的集合中
      */
     @Test
-    public void test1(){
+    public void test1() {
         List<String> list1 = new ArrayList<>();
         list1.add("张老三");
         list1.add("张小三");
@@ -40,20 +40,20 @@ public class Stream_Learn {
      * Collection创建集合，List，Set，Map，Array
      */
     @Test
-    public void test2(){
+    public void test2() {
         List<String> list = new ArrayList<>();
         Stream<String> stream = list.stream();
 
         Set<String> set = new HashSet<>();
         Stream<String> stream1 = set.stream();
 
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         Stream<String> stream2 = map.keySet().stream();
         Stream<String> stream3 = map.values().stream();
         Stream<Map.Entry<String, String>> stream4 = map.entrySet().stream();
 
 
-        String [] a = {"1","@","3","5"};
+        String[] a = {"1", "@", "3", "5"};
         Stream<String> a1 = Stream.of(a);
 
     }
@@ -65,7 +65,7 @@ public class Stream_Learn {
      * 将员工按性别分类，将员工按性别和地区分类，将员工按薪资是否高于8000分为两部分。
      */
     @Test
-    public void test3(){
+    public void test3() {
         List<Person> personList = new ArrayList<Person>();
         personList.add(new Person("Tom", 8900, "male", "New York"));
         personList.add(new Person("Jack", 7000, "male", "Washington"));
@@ -73,8 +73,9 @@ public class Stream_Learn {
         personList.add(new Person("Anni", 8200, "female", "New York"));
         personList.add(new Person("Owen", 9500, "male", "New York"));
         personList.add(new Person("Alisa", 7900, "female", "New York"));
+
         //salary大于8000的员工
-        personList.stream().filter(entity->entity.getSalary()>8000).map(entity->entity.getName()).collect(Collectors.toList()).forEach(System.out::println);
+        personList.stream().filter(entity -> entity.getSalary() > 8000).map(entity -> entity.getName()).collect(Collectors.toList()).forEach(System.out::println);
 
         //最高薪资
         System.out.println(personList.stream().map(Person::getSalary).collect(Collectors.maxBy(Integer::compareTo)).get());
@@ -96,7 +97,6 @@ public class Stream_Learn {
 
         System.out.println(personList.stream().collect(Collectors.partitioningBy(person -> person.getSalary() > 8000)));
     }
-
 
 
 }

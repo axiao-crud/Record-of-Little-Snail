@@ -22,5 +22,13 @@ match-匹配
 
 具体案例参照Stream_Learn中test3
 
+# 3.Stream本质
+对List中元素进行处理，map是对其映射，filter是过滤，foreach是逐个处理，groupingby和partitioningBy是分组
+
+
+
+# 4.并行流（多线程）
+
+
     
 
